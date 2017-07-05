@@ -1,6 +1,44 @@
+// var app = {
+//   server: 'http://parse.sfm6.hackreactor.com/chatterbox/classes/messages',
+//   username: 'anonymous',
+//   roomname: 'lobby',
+//   messages: [],
+//   lastMessageId: 0,
+
+//   init: function() {
+//     // Get username
+//     app.username = window.location.search.substr(10);
+
+//     // Cache jQuery selectors
+//   }
+// };
+
+// // fetch is a get request
+// app.fetch = function() {
+//   $.ajax({
+//     url: app.server,
+//     type: 'GET',
+//     success: function(data) {
+//       console.log('ajax success!');
+//     },
+//     error: function(error) {
+//       console.error(error);
+//     }
+//   })
+// }
+
+// app.renderMessages = function() {
+//   for (var i = 0; i < app.messages.length; i++) {
+//   // Render each individual message
+//     // Create a div to hold the message
+//   }
+// }
+
+// app.clearMessages = function() {
+//   $('chats').html('');
+// }
 
 var app = {};
-
 app.server = 'http://parse.sfm6.hackreactor.com/chatterbox/classes/messages';
 
 app.init = function() {
@@ -46,7 +84,7 @@ app.fetch = function(cb) {
         app.messageStorage[data.results[i].objectId] = app.escapeMessage(data.results[i]);
       }
       if (firstTimeRun) {
-        app.refresh();
+        // app.refresh();
         firstTimeRun = false;  
       }
     },
